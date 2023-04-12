@@ -4,35 +4,35 @@
             "name": "Rameesha",
             "address" : "Karachi",
             "email": "rameesha@gmail.com",
-           " contact" : "034959339596",
+           "contact" : 124566,
            "id": 1
         },
         {
             "name": "Adeena",
             "address" : "Lahore",
             "email": "adeena@gmail.com",
-           " contact" : "867867869596",
+           "contact" : 124566,
            "id": 2
         },
         {
             "name": "Beenish",
             "address" : "Punjab",
             "email": "beenish@gmail.com",
-           " contact" : "5908605985096",
+           "contact" : 124566,
            "id": 3
         },
         {
             "name": "Armeen",
             "address" : "Hyederabad",
             "email": "armeen@gmail.com",
-           " contact" : "4985758964955",
+           "contact" : 498575955,
            "id": 4
         },
         {
             "name": "Jaweria",
             "address" : "Islamabad",
             "email": "jaweria@gmail.com",
-           " contact" : "98786939485923",
+           "contact" : 987485923,
            "id": 5
         }
     ]
