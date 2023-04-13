@@ -1,4 +1,5 @@
 import React,{useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -34,16 +35,21 @@ const rows = [
 
 const Home = () => {
 
+    const navigate = useNavigate()
     let dispatch = useDispatch()
     const {users} = useSelector(state=> state.users)
     useEffect(()=>{
         dispatch(loadUsers())
     })
 
+    const handleAddUSer = () => {
+        navigate("/adduser")
+    }
+
     return (
         <div style={{ textAlign: "center", margin: "50px" }}>
             <h2>CRUD Operation Using Redux</h2>
-            <Button variant="contained" sx={{ margin: "10px", marginRight: "-650px" }}>Add User</Button>
+            <Button variant="contained" sx={{ margin: "10px", marginRight: "-650px" }} onClick={handleAddUSer}>Add User</Button>
             <TableContainer component={Paper} sx={{ marginTop: "90px", width: 800, margin: "auto", }}>
                 <Table sx={{}} aria-label="simple table">
                     <TableHead sx={{backgroundColor: "#E5E5E5"}}> 
