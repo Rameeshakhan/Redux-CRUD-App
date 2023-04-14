@@ -13,7 +13,7 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadUsers } from '../redux/action';
+import { deleteUser, loadUsers } from '../redux/action';
 
 function createData(
     name,
@@ -33,6 +33,7 @@ const rows = [
     createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
+
 const Home = () => {
 
     const navigate = useNavigate()
@@ -44,6 +45,12 @@ const Home = () => {
 
     const handleAddUSer = () => {
         navigate("/adduser")
+    }
+
+    const handleDelete = (id) => {
+        if(window.confirm("Are you sure you want to delete ?")){
+            dispatch(deleteUser(id))
+        }
     }
 
     return (
@@ -75,7 +82,7 @@ const Home = () => {
                                 <TableCell>{user.address}</TableCell>
                                 <TableCell>
                                     <Stack direction="row" spacing={2} >
-                                        <IconButton aria-label="delete">
+                                        <IconButton aria-label="delete" onClick={() => handleDelete(user.id)}>
                                             <DeleteIcon />
                                         </IconButton>
                                         <IconButton aria-label="edit">
