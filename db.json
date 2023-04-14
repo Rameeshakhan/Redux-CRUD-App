@@ -1,39 +1,32 @@
 {
-    "users": [
-        {
-            "name": "Rameesha",
-            "address" : "Karachi",
-            "email": "rameesha@gmail.com",
-           "contact" : 124566,
-           "id": 1
-        },
-        {
-            "name": "Adeena",
-            "address" : "Lahore",
-            "email": "adeena@gmail.com",
-           "contact" : 124566,
-           "id": 2
-        },
-        {
-            "name": "Beenish",
-            "address" : "Punjab",
-            "email": "beenish@gmail.com",
-           "contact" : 124566,
-           "id": 3
-        },
-        {
-            "name": "Armeen",
-            "address" : "Hyederabad",
-            "email": "armeen@gmail.com",
-           "contact" : 498575955,
-           "id": 4
-        },
-        {
-            "name": "Jaweria",
-            "address" : "Islamabad",
-            "email": "jaweria@gmail.com",
-           "contact" : 987485923,
-           "id": 5
-        }
-    ]
+  "users": [
+    {
+      "name": "Rameesha",
+      "address": "Karachi",
+      "email": "rameesha@gmail.com",
+      "contact": 124566,
+      "id": 1
+    },
+    {
+      "name": "Adeena",
+      "address": "Lahore",
+      "email": "adeena@gmail.com",
+      "contact": 124566,
+      "id": 2
+    },
+    {
+      "name": "Beenish",
+      "address": "Punjab",
+      "email": "beenish@gmail.com",
+      "contact": 124566,
+      "id": 3
+    },
+    {
+      "name": "Armeen",
+      "address": "Hyederabad",
+      "email": "armeen@gmail.com",
+      "contact": 498575955,
+      "id": 4
+    }
+  ]
 }
