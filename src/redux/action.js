@@ -10,6 +10,10 @@ const deleteU = () => ({
     type: types.deleteUser,
 })
 
+const userAdded = () => ({
+    type: types.addUser,
+})
+
 export const loadUsers = () => {
     return function (dispatch) {
         axios.get(`http://localhost:5000/users`)
@@ -27,6 +31,18 @@ export const deleteUser = (id) => {
             // console.log(res.data)
             dispatch(deleteU())
             dispatch(loadUsers())
+        })
+        .catch(err => console.log("err" + err))
+    }
+}
+
+export const addUser = (user) => {
+    return function (dispatch) {
+        axios.post(`http://localhost:5000/users/` , user)
+        .then((res) => {
+            // console.log(res.data)
+            dispatch(userAdded())
+            // dispatch(loadUsers())
         })
         .catch(err => console.log("err" + err))
     }
