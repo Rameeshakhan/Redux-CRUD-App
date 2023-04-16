@@ -15,13 +15,6 @@
       "id": 2
     },
     {
-      "name": "Beenish",
-      "address": "Punjab",
-      "email": "beenish@gmail.com",
-      "contact": 124566,
-      "id": 3
-    },
-    {
       "name": "Armeen",
       "address": "Hyederabad",
       "email": "armeen@gmail.com",
@@ -34,6 +27,20 @@
       "address": "Washinton, DC",
       "contact": "987897987989",
       "id": 5
+    },
+    {
+      "name": "Nasreen",
+      "email": "nasreen@gmail.com",
+      "address": "France",
+      "contact": "094693929559",
+      "id": 6
+    },
+    {
+      "name": "Shahid Khan",
+      "email": "shahid@gmail.com",
+      "address": "Warsaw",
+      "contact": "3985946795876",
+      "id": 7
     }
   ]
 }
