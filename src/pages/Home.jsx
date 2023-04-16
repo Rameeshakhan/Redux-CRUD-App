@@ -41,7 +41,7 @@ const Home = () => {
     const {users} = useSelector(state=> state.users)
     useEffect(()=>{
         dispatch(loadUsers())
-    })
+    }, [])
 
     const handleAddUSer = () => {
         navigate("/adduser")
@@ -85,7 +85,7 @@ const Home = () => {
                                         <IconButton aria-label="delete" onClick={() => handleDelete(user.id)}>
                                             <DeleteIcon />
                                         </IconButton>
-                                        <IconButton aria-label="edit">
+                                        <IconButton aria-label="edit" onClick={() => navigate(`/edituser/${user.id}`)}>
                                             <EditIcon />
                                         </IconButton>
                                     </Stack>
