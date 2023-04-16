@@ -3,7 +3,7 @@ import * as types from "./actionType"
 const initialState = {
     users: [],
     user: {},
-    loading: false
+    loading: true
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -16,10 +16,19 @@ const usersReducer = (state = initialState, action) => {
         }
         case types.deleteUser:
         case types.addUser:
+        case types.updateUser:
             return{
                 ...state,
                 loading: false,
             }
+            break
+        case types.getSingleUser:
+            return{
+                ...state,
+                user: action.payload,
+                loading: false
+            }
+            break
         default:
             return state;
     }
