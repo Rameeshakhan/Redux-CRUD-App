@@ -14,6 +14,15 @@ const userAdded = () => ({
     type: types.addUser,
 })
 
+const getUser = (user) => ({
+    type: types.getSingleUser,
+    payload: user,
+})
+
+const userUpdated = () => ({
+    type: types.updateUser,
+})
+
 export const loadUsers = () => {
     return function (dispatch) {
         axios.get(`http://localhost:5000/users`)
@@ -45,5 +54,29 @@ export const addUser = (user) => {
             // dispatch(loadUsers())
         })
         .catch(err => console.log("err" + err))
+    }
+}
+
+export const getSingleUser = (id) => {
+    return function (dispatch) {
+        axios.get(`http://localhost:5000/users/${id}`)
+        .then((res) => {
+            console.log("respobne",res.data)
+            dispatch(getUser(res.data))
+            // dispatch(loadUsers())
+        })
+        .catch(err => console.log("errorrrsddcv" + err))
+    }
+}
+
+export const updateUser = (user , id) => {
+    return function (dispatch) {
+        axios.put(`http://localhost:5000/users/${id}`, user)
+        .then((res) => {
+            console.log("respobne",res.data)
+            dispatch(userUpdated())
+            // dispatch(loadUsers())
+        })
+        .catch(err => console.log("errorrrsddcv" + err))
     }
 }
