@@ -3,34 +3,37 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUser, getSingleUser } from '../redux/action';
+import { getSingleUser, updateUser } from '../redux/action';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const EditUser = () => {
+    
   const [state, setState] = useState({
     name: "",
     email: "",
     address: "",
     contact: ""
   })
-
-  const [error, setError] = useState("")
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  let {id} = useParams();
-  const {user}= useSelector(state => state.data)
-
   const { name, email, address, contact } = state
+  const [error, setError] = useState("")
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  let {id} = useParams();
+  const { user, loading } = useSelector(state => state.users);
 
   useEffect(() => {
-    dispatch(getSingleUser(id))
-  }, [id])
-
+    dispatch(getSingleUser(id));
+  }, [id]);
+  
   useEffect(() => {
-   if(user){
-    setState({...user})
-   }
-  }, [user])
+    if (user) {
+      setState({ ...user });
+    }
+  }, [user]);
+  
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   const handleChangeInput = (e) => {
     setState({ 
@@ -45,7 +48,7 @@ const EditUser = () => {
       setError("Please fill all input feilds")
       console.log(error)
     } else {
-      dispatch(addUser(state))
+      dispatch(updateUser(state , id))
       navigate("/home")
       setError("");
     }
